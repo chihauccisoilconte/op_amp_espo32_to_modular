@@ -14,6 +14,16 @@ The stage therefore amplifies the signal and reverses its polarity. C19 (100 pF)
 
 The intended signal path is **ESP32 DAC → AUDIO IN → amplifier → AUDIO OUT → modular synth audio input**, with a shared signal ground.
 
+## TL072CP alternative and bill of materials
+
+The **TL072CP** can be used as an alternative to the TL072CDT for this amplifier with the shown **±12 V supply**. Both use the same pin numbering: pin 8 is +12 V, pin 4 is −12 V, and the first amplifier uses pins 1 (output), 2 (inverting input), and 3 (non-inverting input). The resistor and capacitor values can remain the same.
+
+The package is different: **TL072CP is through-hole DIP-8**, suitable for a breadboard or DIP socket; **TL072CDT is surface-mount SO-8**. A PCB must use the footprint for the selected package; these are not physically interchangeable on the same pads. See the [TI TL072CP product page](https://www.ti.com/product/TL072/part-details/TL072CP), [TI TL072 datasheet](https://www.ti.com/lit/ds/symlink/tl072.pdf), and [ST TL072 datasheet](https://www.st.com/resource/en/datasheet/tl072.pdf).
+
+This substitution is based on the manufacturer documentation, not a hardware test of this circuit. It does not resolve the DAC DC-offset handling described below.
+
+**[Download the bill of materials spreadsheet](Eurorack_audio_amp_BOM.xlsx).** The spreadsheet is the original BOM; the TL072CP substitution is documented here.
+
 ## Integration status
 
 This drawing is a starting point for the interface, not a tested complete ESP32 module. In particular, it does not show AC coupling or a circuit to remove the DAC's DC offset. Any DC voltage at the input is also amplified and inverted, which must be accounted for when setting the output level and available headroom. The ESP32 model, DAC output range, and desired modular audio level still need to be specified.
@@ -26,4 +36,4 @@ Power-supply decoupling, treatment of the unused op-amp channel, connector detai
 - [Eurorack_audio_amp_BOM.xlsx](Eurorack_audio_amp_BOM.xlsx): existing bill of materials spreadsheet.
 - [STATUS.md](STATUS.md): project status and remaining work.
 
-The circuit description above is based on the supplied schematic image; component pinouts and operating limits have not been checked against manufacturer datasheets in this documentation update.
+The circuit description above is based on the supplied schematic image. Manufacturer documentation was consulted for the TL072CP substitution; the complete circuit has not undergone datasheet validation or hardware testing.
