@@ -22,7 +22,7 @@ The package is different: **TL072CP is through-hole DIP-8**, suitable for a brea
 
 This substitution is based on the manufacturer documentation, not a hardware test of this circuit. It does not resolve the DAC DC-offset handling described below.
 
-**[Download the bill of materials spreadsheet](Eurorack_audio_amp_BOM.xlsx).** The spreadsheet is the original BOM; the TL072CP substitution is documented here.
+**[View the bill of materials on GitHub](BOM.md)** or [download the original spreadsheet](Eurorack_audio_amp_BOM.xlsx). The TL072CP substitution is documented here and in the Markdown BOM.
 
 ## Integration status
 
@@ -33,6 +33,7 @@ Power-supply decoupling, treatment of the unused op-amp channel, connector detai
 ## Files
 
 - [schematic.png](schematic.png): reference drawing of the amplifier stage.
+- [BOM.md](BOM.md): GitHub-readable bill of materials and circuit notes.
 - [Eurorack_audio_amp_BOM.xlsx](Eurorack_audio_amp_BOM.xlsx): existing bill of materials spreadsheet.
 - [STATUS.md](STATUS.md): project status and remaining work.
 
